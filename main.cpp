@@ -1,15 +1,12 @@
 #include <iostream>
-#include "Estructuras/ArbolAVL.h"
-
-#include "Estructuras/leerCSV.h" //Lee Archivo CSV y Muestra CantArtTotal o CantArtTotalDif
-#include "Estructuras/stock.h"
+#include "Estructuras/ProcesadorArgumentos.h" //Procesa los argumentos por consolo  
 using namespace std;
 
 
-int main() {
+int main(int argc, char* argv[]) {
     string nombreArchivo = "CSV/prueba.csv";
     vector<vector<string>> datos = leerArchivoCSV(nombreArchivo);
-    Lista<Producto> listaProductos;
+    /*Lista<Producto> listaProductos;
     int n, deposito;
     // Llenar la lista de productos con los datos del archivo CSV
     for (const vector<string>& fila : datos) {
@@ -31,8 +28,10 @@ int main() {
 
             listaProductos.insertarUltimo(producto);
         }
-    }
+    }*/
 
+    procesarArgumentos(argc, argv, datos);
+/*
     string nombreArticuloBuscado = "SILLA 4 PATAS DE MADERA";
     int stockTotal = stockArticulo(listaProductos, nombreArticuloBuscado);
     cout << "El stock total de '" << nombreArticuloBuscado << "' es: " << stockTotal << endl;
@@ -40,7 +39,7 @@ int main() {
     int depositoD = 5 ;  // Reemplaza con el número del depósito que deseas buscar
     int stockEnDeposito = stockArticuloDeposito(listaProductos, nombreArticuloBuscado, depositoD);
     cout << "El stock en el deposito " << depositoD<< " de '" << nombreArticuloBuscado << "' es: " << stockEnDeposito << endl;
-
+*/
     return 0;
 }
 
@@ -97,25 +96,7 @@ int main() {
 
     return 0;
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   /*
+  /*
     int opcion;
     int cantTotalArt = cantidadTotalArticulos(datos);
     int cantTotalArtDif = cantidadTotalArticulosDiferentes(datos);

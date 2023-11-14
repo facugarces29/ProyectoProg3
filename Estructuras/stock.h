@@ -1,9 +1,8 @@
-#ifndef MAXMINSTOCK_H
-#define MAXMINSTOCK_H
+#ifndef STOCK_H
+#define STOCK_H
 #include <iostream>
 #include <sstream>
 #include <fstream>
-//#include "Articulo.h"
 #include "ArbolAVL.h"
 #include "Lista.h"
 
