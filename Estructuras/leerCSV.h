@@ -37,7 +37,7 @@ vector<vector<string>> leerArchivoCSV(const string& nombreArchivo) {
         while (getline(ss, valor, ',')) {
             // Reemplazar celdas vacías con "null"
             if (valor.empty()) {
-                valor = "NULL";
+                valor = "0";
             }
             fila.push_back(valor);
         }
