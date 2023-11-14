@@ -14,6 +14,15 @@ struct Producto {
     vector<int> depositos;
 };
 
+string quitarEspacios(const string& str) {
+    string sinEspacios;
+    for (char c : str) {
+        if (!isspace(c)) {
+            sinEspacios += c;
+        }
+    }
+    return sinEspacios;
+}
 void MinStock(const Lista<Producto>& productos, int n) {
     Nodo<Producto>* nodo = productos.getInicio();
     Lista<Producto> productosConMenorStock;
@@ -102,7 +111,7 @@ int stockArticulo(const Lista<Producto>& productos, const std::string& nombreArt
 
     while (nodo != nullptr) {
         Producto producto = nodo->getDato();
-        if (producto.nombre == nombreArticulo) {
+        if (quitarEspacios(producto.nombre) == quitarEspacios(nombreArticulo)) {
             // Sumar el stock de todos los depósitos
             for (int stock : producto.depositos) {
                 stockTotal += stock;
@@ -122,7 +131,7 @@ int stockArticuloDeposito(const Lista<Producto>& productos, const string& nombre
     while (nodo != nullptr) {
     Producto producto = nodo->getDato();
 
-    if (producto.nombre == nombreArticulo) {
+    if (quitarEspacios(producto.nombre) == quitarEspacios(nombreArticulo)) {
         if (deposito >= 1 && deposito <= producto.depositos.size()) {
             stockDeposito = producto.depositos[deposito-1];
             

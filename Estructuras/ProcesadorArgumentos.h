@@ -37,11 +37,11 @@ void procesarArgumentos(int argc, char* argv[], const vector<vector<string>>& da
     string operacion = argv[1];
     string archivoCSV = argv[2];
 
-     if (operacion == "-total_art_dif") {
+     if (operacion == "-totalArtDif") {
         int cantDif = cantidadTotalArticulosDiferentes(datos);
         cout << "Cantidad Total de Articulos Diferentes: "<< cantDif<< endl;
     } 
-    else if (operacion == "-total_art") {
+    else if (operacion == "-totalArt") {
     
         int cantTotal = cantidadTotalArticulos(datos);
         cout << "Cantidad Total de Articulos: "<< cantTotal<< endl;
@@ -54,7 +54,7 @@ void procesarArgumentos(int argc, char* argv[], const vector<vector<string>>& da
         MinStock(listaProductos,n);
     
     } 
-    else if (operacion == "-listarArticulosMinimoStockDeposito") {
+    else if (operacion == "-MinStockDepo") {
     
         cout<<"ingrese cantidad de producto"<<endl;
         cin>> n;
@@ -63,7 +63,7 @@ void procesarArgumentos(int argc, char* argv[], const vector<vector<string>>& da
         listarArticulosMinimoStockDeposito(listaProductos,n,deposito);
     
     }
-    else if (operacion == "-stockArticulo") {
+    else if (operacion == "-stock") {
     
         cout << "Ingrese Nombre del articulo"<< endl;
         cin >> nombreArticuloBuscado;
@@ -71,7 +71,7 @@ void procesarArgumentos(int argc, char* argv[], const vector<vector<string>>& da
         cout << "Stock Total "<< SA << endl;
     
     }
-    else if (operacion == "-stockArticuloDeposito") {
+    else if (operacion == "-stockDepo") {
     
         cout << "Ingrese Nombre del articulo"<< endl;
         cin >> nombreArticuloBuscado;
@@ -81,7 +81,7 @@ void procesarArgumentos(int argc, char* argv[], const vector<vector<string>>& da
         cout << " "<<nombreArticuloBuscado<<" en el deposito "<<deposito<<" :"<< SAP<< endl;
     
     }
-    else if (operacion == "-listarArticulosMaxStock") {
+    else if (operacion == "-MaxStock") {
     
         cout<<"ingrese cantidad de producto"<<endl;
         cin>> n;
