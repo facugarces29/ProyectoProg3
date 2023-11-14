@@ -90,7 +90,7 @@ void listarArticulosMinimoStockDeposito(const Lista<Producto>& productos, int n,
         // Verificar si hay suficientes depósitos en el producto
         if (producto.depositos.size() > depositoDeseado) {
             int stockDeposito = producto.depositos[depositoDeseado-1];
-            if (stockDeposito == n) {
+            if (stockDeposito <= n) {
                 cantidadEnDeposito = n;  // Establecer la cantidad si el stock es igual a n
             }
         }
