@@ -37,9 +37,9 @@ int main() {
     int stockTotal = stockArticulo(listaProductos, nombreArticuloBuscado);
     cout << "El stock total de '" << nombreArticuloBuscado << "' es: " << stockTotal << endl;
 
-    int depositoD = 4 ;  // Reemplaza con el número del depósito que deseas buscar
+    int depositoD = 5 ;  // Reemplaza con el número del depósito que deseas buscar
     int stockEnDeposito = stockArticuloDeposito(listaProductos, nombreArticuloBuscado, depositoD);
-    cout << "El stock en el deposito " << depositoD+1 << " de '" << nombreArticuloBuscado << "' es: " << stockEnDeposito << endl;
+    cout << "El stock en el deposito " << depositoD<< " de '" << nombreArticuloBuscado << "' es: " << stockEnDeposito << endl;
 
     return 0;
 }

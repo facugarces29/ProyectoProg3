@@ -125,8 +125,8 @@ int stockArticuloDeposito(const Lista<Producto>& productos, const string& nombre
     //cout << "Nombre del producto: " << producto.nombre << endl;  // Agrega esta línea
 
     if (producto.nombre == nombreArticulo) {
-        if (deposito >= 0 && deposito < producto.depositos.size()) {
-            stockDeposito = producto.depositos[deposito];
+        if (deposito >= 1 && deposito <= producto.depositos.size()) {
+            stockDeposito = producto.depositos[deposito-1];
             //cout << "Encontrado en el depósito " << deposito << ". Stock: " << stockDeposito << endl;  // Agrega esta línea
         }
     }
