@@ -11,5 +11,9 @@ int main(){
     vector<vector<string>> datos = leerArchivoCSV(nombre_archivo);
 
     mostrarDatosCSV(datos);
+    int cantTotalArt = cantidadTotalArticulos(datos);
+    int cantTotalArtDif = cantidadTotalArticulosDiferentes(datos);
+    cout<<"Cantidad total articulos "<< cantTotalArt << endl;
+    cout<<"Cantidad total Articulos diferente "<< cantTotalArtDif << endl;
     return 0;
 }

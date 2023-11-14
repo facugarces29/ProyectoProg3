@@ -7,6 +7,7 @@
 #include<set>
 using namespace std;
 
+
 vector<vector<string>> leerArchivoCSV(const string& nombreArchivo) {
     vector<vector<string>> datos;
 
@@ -78,3 +79,39 @@ void mostrarDatosCSV(const vector<vector<string>>& datos) {
         cout << endl;
     }
 }
+
+//Muestra la cantidad de articulos totales
+//-total_art
+int cantidadTotalArticulos(const vector<vector<string>>& datos) {
+    int total = 0;
+    for (const vector<string>& fila : datos) {
+        if (fila.size() >= 5) { 
+            for (int i = 3; i <= 7; ++i) {
+                if (!fila[i].empty() && esEnteroValido(fila[i])) { 
+                    int stock = convertir_a_entero(fila[i]); 
+                    if (stock != -1) {
+                        total += stock;
+                    }
+                }
+            }
+        } else {
+            cerr << "Fila incompleta, no se pudo contar el stock." << endl;
+        }
+    }
+    return total;
+}
+
+//Muestra la cantidad Diferentes de articulos
+//-total_art_dif
+int cantidadTotalArticulosDiferentes(const vector<vector<string>>& datos) {
+    set<string> codigosBarras;
+
+    for (const vector<string>& fila : datos) {
+        if (fila.size() >= 3) { // Verificar que haya al menos 3 elementos en la fila (para obtener el código de barras)
+            string codigoBarras = fila[1]; // Suponiendo que la columna del código de barras es la segunda (índice 1)
+            codigosBarras.insert(codigoBarras);
+        }
+    }
+
+    return codigosBarras.size();
+};

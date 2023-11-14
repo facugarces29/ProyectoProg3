@@ -1,3 +1,0 @@
-C:/Users/valep/OneDrive/Escritorio/progIII/ProyectoProg3/cmake-build-debug/CMakeFiles/ProyectoProg3.dir
-C:/Users/valep/OneDrive/Escritorio/progIII/ProyectoProg3/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/valep/OneDrive/Escritorio/progIII/ProyectoProg3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
