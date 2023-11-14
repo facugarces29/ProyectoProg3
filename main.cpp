@@ -6,7 +6,50 @@
 using namespace std;
 
 
-int main(){
+int main() {
+    string nombreArchivo = "CSV/prueba.csv";
+    vector<vector<string>> datos = leerArchivoCSV(nombreArchivo);
+    Lista<Producto> listaProductos;
+    int n, deposito;
+    // Llenar la lista de productos con los datos del archivo CSV
+    for (const vector<string>& fila : datos) {
+        if (fila.size() >= 8) {  // Asegúrate de que haya al menos 8 elementos en la fila
+            Producto producto;
+            producto.grupo = fila[0];
+            producto.codigoBarras = fila[1];
+            producto.nombre = fila[2];
+
+            // Llenar el vector de depósitos
+            for (int i = 3; i <= 7; ++i) {
+                if (esEnteroValido(fila[i])) {
+                    int stock = convertir_a_entero(fila[i]);
+                    if (stock != -1) {
+                        producto.depositos.push_back(stock);
+                    }
+                }
+            }
+
+            listaProductos.insertarUltimo(producto);
+        }
+    }
+
+    string nombreArticuloBuscado = "SILLA 4 PATAS DE MADERA";
+    int stockTotal = stockArticulo(listaProductos, nombreArticuloBuscado);
+    cout << "El stock total de '" << nombreArticuloBuscado << "' es: " << stockTotal << endl;
+
+    int depositoD = 3 ;  // Reemplaza con el número del depósito que deseas buscar
+    int stockEnDeposito = stockArticuloDeposito(listaProductos, nombreArticuloBuscado, depositoD);
+    cout << "El stock en el deposito " << depositoD << " de '" << nombreArticuloBuscado << "' es: " << stockEnDeposito << endl;
+
+    return 0;
+}
+
+
+
+
+
+
+/*int main(){
     string nombre_archivo = "CSV/prueba.csv";
     vector<vector<string>> datos = leerArchivoCSV(nombre_archivo);
    
@@ -34,7 +77,7 @@ int main(){
         }
     }
 
-    /*cout << "Ingrese el valor n: " << endl;
+*/    /*cout << "Ingrese el valor n: " << endl;
     cin >> n;
     cout << "Ingrese el valor deposito: " << endl;
     cin >> deposito;
@@ -138,5 +181,5 @@ int main(){
         }
     } while (opcion != 9);
 
-    return 0;*/
-}
+    return 0;
+}*/

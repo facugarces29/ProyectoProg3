@@ -116,20 +116,22 @@ int stockArticulo(const Lista<Producto>& productos, const std::string& nombreArt
 }
 
 // Función para obtener el stock del artículo en un depósito específico en la lista
-int stockArticuloDeposito(const Lista<Producto>& productos, const std::string& nombreArticulo, int deposito) {
+int stockArticuloDeposito(const Lista<Producto>& productos, const string& nombreArticulo, int deposito) {
     Nodo<Producto>* nodo = productos.getInicio();
     int stockDeposito = 0;
 
     while (nodo != nullptr) {
-        Producto producto = nodo->getDato();
-        if (producto.nombre == nombreArticulo) {
-            if (deposito >= 0 && deposito < producto.depositos.size()) {
-                stockDeposito = producto.depositos[deposito];
-                break; // Encontramos el artículo, no es necesario seguir buscando
-            }
+    Producto producto = nodo->getDato();
+    //cout << "Nombre del producto: " << producto.nombre << endl;  // Agrega esta línea
+
+    if (producto.nombre == nombreArticulo) {
+        if (deposito >= 0 && deposito < producto.depositos.size()) {
+            stockDeposito = producto.depositos[deposito];
+            //cout << "Encontrado en el depósito " << deposito << ". Stock: " << stockDeposito << endl;  // Agrega esta línea
         }
-        nodo = nodo->getSiguiente();
     }
+    nodo = nodo->getSiguiente();
+}
 
     return stockDeposito;
 }
