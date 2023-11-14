@@ -1,6 +1,6 @@
 #ifndef U05_ARBOL_ARBOL_ARBOLBINARIOAVL_H_
 #define U05_ARBOL_ARBOL_ARBOLBINARIOAVL_H_
-
+#include <string>
 #include "NodoArbolAVL.h"
 
 template <class T>
