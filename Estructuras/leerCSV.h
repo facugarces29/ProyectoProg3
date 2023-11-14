@@ -5,8 +5,8 @@
 #include<iostream>
 #include<algorithm>
 #include<set>
-using namespace std;
 
+using namespace std;
 
 vector<vector<string>> leerArchivoCSV(const string& nombreArchivo) {
     vector<vector<string>> datos;
