@@ -39,37 +39,56 @@ void procesarArgumentos(int argc, char* argv[], const vector<vector<string>>& da
 
      if (operacion == "-total_art_dif") {
         int cantDif = cantidadTotalArticulosDiferentes(datos);
-        cout << "Cantidad Total de Articulos Diferentes"<< cantDif<< endl;
-    } else if (operacion == "-total_art") {
+        cout << "Cantidad Total de Articulos Diferentes: "<< cantDif<< endl;
+    } 
+    else if (operacion == "-total_art") {
+    
         int cantTotal = cantidadTotalArticulos(datos);
-        cout << "Cantidad Total de Articulos "<< cantTotal<< endl;
-    } else if (operacion == "-MinStock") {
+        cout << "Cantidad Total de Articulos: "<< cantTotal<< endl;
+    
+    } 
+    else if (operacion == "-MinStock") {
+    
         cout<<"ingrese cantidad de producto"<<endl;
         cin>> n;
         MinStock(listaProductos,n);
-    } else if (operacion == "-listarArticulosMinimoStockDeposito") {
+    
+    } 
+    else if (operacion == "-listarArticulosMinimoStockDeposito") {
+    
         cout<<"ingrese cantidad de producto"<<endl;
         cin>> n;
         cout<<"ingrese deposito"<<endl;
         cin>>deposito;
         listarArticulosMinimoStockDeposito(listaProductos,n,deposito);
-    } else if (operacion == "-stockArticulo") {
+    
+    }
+    else if (operacion == "-stockArticulo") {
+    
         cout << "Ingrese Nombre del articulo"<< endl;
         cin >> nombreArticuloBuscado;
         int SA = stockArticulo(listaProductos, nombreArticuloBuscado);
         cout << "Stock Total "<< SA << endl;
-    } else if (operacion == "-stockArticuloDeposito") {
+    
+    }
+    else if (operacion == "-stockArticuloDeposito") {
+    
         cout << "Ingrese Nombre del articulo"<< endl;
         cin >> nombreArticuloBuscado;
         cout << "ingrese numero de deposito"<<endl;
         cin >> deposito;
         int SAP = stockArticuloDeposito(listaProductos, nombreArticuloBuscado, deposito);
-        cout << " "<<nombreArticuloBuscado<<"en el deposito "<<deposito<<" "<< SAP<< endl;
-    } else if (operacion == "-listarArticulosMaxStock") {
+        cout << " "<<nombreArticuloBuscado<<" en el deposito "<<deposito<<" :"<< SAP<< endl;
+    
+    }
+    else if (operacion == "-listarArticulosMaxStock") {
+    
         cout<<"ingrese cantidad de producto"<<endl;
         cin>> n;
         listarArticulosMaxStock(listaProductos,n);
-    } else {
+    } 
+    else {
+     
         cerr << "Operación no válida." << endl;
         
     }
